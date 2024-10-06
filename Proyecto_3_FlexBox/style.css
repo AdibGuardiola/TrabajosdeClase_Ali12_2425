@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+.flex-container:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pepe {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex: 1 1 220px;
+    margin: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.pepe:hover {
+    background-color: #45a049;
+    transform: translateY(-10px) scale(1.05);
+    cursor: pointer;
+}
+
+/* Estilos específicos para cada caja */
+.c1 {
+    background-color: #ff5722;
+    border: 2px solid #ffccbc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.c2 {
+    background-color: #2196f3;
+    border: 2px dashed #bbdefb;
+    font-family: 'Georgia', serif;
+    transform: rotate(-3deg);
+}
+
+.c3 {
+    background-color: #ffeb3b;
+    color: #333;
+    border: 2px dotted #fff176;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.c4 {
+    background-color: #9c27b0;
+    border: 2px double #ce93d8;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.pepe:hover {
+    animation: bounce 0.5s ease;
+}
