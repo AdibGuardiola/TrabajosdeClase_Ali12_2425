@@ -1,0 +1,173 @@
+/* RESET BÁSICO */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ENCABEZADO (HEADER) */
+.header {
+    background-color: #333; /* Fondo gris oscuro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 1px; /* Pequeño espacio interno */
+    position: relative; /* Posicionamiento relativo para colocar el logo */
+}
+
+/* LOGO */
+.logo {
+    position: absolute; /* Posicionamiento absoluto en el encabezado */
+    top: 10px; /* Ajusta la posición desde arriba */
+    left: 20px; /* Ajusta la posición desde la izquierda */
+    width: 150px; /* Aumenta el tamaño del logo */
+    height: 150px; /* Aumenta el tamaño del logo */
+}
+
+/* NAVEGACIÓN PRINCIPAL (MENÚ) */
+.main-nav {
+    background-color: #444; /* Fondo gris medio */
+    padding: 10px; /* Espaciado interno */
+    display: flex; /* Usa flexbox para organizar el contenido */
+    justify-content: center; /* Centra los elementos en el centro */
+    align-items: center; /* Alinea verticalmente los elementos */
+    position: relative; /* Para posicionar los íconos a la derecha */
+    height: 60px;
+}
+
+.main-nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+    display: flex; /* Flexbox para alinear horizontalmente */
+    align-items: center; /* Alineación vertical */
+}
+
+.main-nav ul li {
+    margin: 0 20px; /* Espaciado entre los elementos */
+}
+
+.main-nav ul li a {
+    color: white; /* Color blanco para los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* ÍCONOS DE CARRITO Y USUARIO */
+.nav-icon-container {
+    position: absolute; /* Para que los íconos se posicionen en relación al contenedor padre */
+    right: 50px; /* Ajusta este valor para mover los íconos más hacia la derecha */
+    top: 50%; /* Alinea verticalmente en el centro */
+    transform: translateY(-50%); /* Centra los íconos verticalmente */
+    display: flex; /* Flexbox para manejar los íconos */
+    gap: 40px; /* Espacio entre los íconos */
+}
+
+.nav-icon {
+    width: 40px !important;  /* Tamaño de los íconos */
+    height: 40px !important; /* Tamaño de los íconos */
+    border-radius: 50%;      /* Bordes redondeados */
+    cursor: pointer;         /* Cursor de mano */
+    object-fit: cover;       /* Ajusta la imagen en el contenedor */
+}
+
+/* TÍTULO PRINCIPAL DEL HEADER */
+.header-title {
+    font-family: 'Lobster', cursive; /* Fuente personalizada */
+    font-size: 3em; /* Tamaño del título */
+    color: #07f12e; /* Color verde para el título */
+    text-align: center; /* Centra el texto */
+}
+
+/* Efecto hover en los enlaces del menú */
+.main-nav ul li a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #ffcc00; /* Cambia el color al pasar el ratón */
+}
+
+/* SECCIÓN PRINCIPAL */
+.section {
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    margin-top: 20px; /* Deja un espacio sobre el contenido principal */
+    margin-left: 15px; /* Mantén el margen izquierdo para todo el contenido */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    text-align: left; /* Asegura que todo el texto esté alineado a la izquierda */
+}
+
+.subtitle, .content-text, .address {
+    text-align: left; /* Alinea a la izquierda todos los elementos de texto */
+    margin-left: 0; /* Elimina cualquier margen izquierdo adicional */
+}
+
+ul {
+    list-style-position: inside; /* Asegura que los puntos de la lista estén dentro del contenido */
+    padding-left: 20px; /* Ajusta el padding para alinear la lista */
+}
+
+ul li {
+    text-align: left; /* Asegura que el texto de cada elemento esté alineado a la izquierda */
+    margin-bottom: 10px; /* Añade un pequeño espacio entre los elementos de la lista */
+}
+
+/* ESTILOS GENERALES PARA SUBTÍTULOS Y TEXTO */
+.subtitle, .content-text, .address {
+    text-align: left; /* Alinea a la izquierda todo el contenido */
+}
+
+/* PIE DE PÁGINA (FOOTER) */
+.footer {
+    background-color: #333; /* Fondo gris oscuro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 20px; /* Añade espacio superior */
+}
+
+/* Modal del Carrito */
+#cartModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar perfectamente */
+    width: 100%; /* Asegúrate de que el modal ocupe el ancho completo */
+    height: 100%; /* Asegúrate de que el modal ocupe el alto completo */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 100;
+    overflow-y: auto; /* Para permitir desplazamiento si el contenido es muy alto */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+}
+
+#cartModal > div {
+    background-color: white;
+    padding: 20px;
+    width: 90%; /* Asegúrate de que el modal no sea demasiado ancho */
+    max-width: 400px; /* Ancho máximo */
+    margin: 0 auto;
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    max-height: 80%; /* Limita la altura máxima para evitar que salga de la pantalla */
+    overflow-y: auto; /* Agrega desplazamiento si el contenido es mayor que la altura */
+}
+
+/* Ajuste del Contenedor de los Elementos del Carrito */
+#cartItems {
+    margin-bottom: 20px;
+}
+
+/* Botones dentro del modal */
+#cartModal button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cartModal button:hover {
+    background-color: #333;
+}

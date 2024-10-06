@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Camisetas Sostenibles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Basica.css">
+    <link rel="stylesheet" href="Diseño.css">
+    <link rel="stylesheet" href="Formulario.css">
+</head>
+<body>
+
+    <!-- El contenedor principal del encabezado -->
+    <header class="header">
+        <img src="logo.jpg" alt="Logo de Mi sitio web" class="logo">
+        <h1 class="header-title">Las Camisetas de Ali12</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-icon-container">
+                <a href="#" id="cart-icon">
+                    <img src="carrito.png" alt="Carrito de Compras" class="nav-icon">
+                </a>
+                <a href="#contacto">
+                    <img src="usuario.png" alt="Usuario" class="nav-icon">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="section">
+        <section>
+            <h2 class="subtitle">Bienvenido a las camisetas ecológicas en IES Ana Luisa by Ali12's Crew</h2>
+            <p class="content-text">En <strong>EcoCamisetas</strong>, estamos comprometidos con ofrecer ropa sostenible y de alta calidad que no solo te haga lucir bien, sino que también ayude a proteger nuestro planeta.</p>
+            <p class="content-text">Nuestro objetivo es crear camisetas cómodas, elegantes y respetuosas con el medio ambiente utilizando materiales 100% reciclables y prácticas de producción éticas.</p>
+            
+            <h3 class="subtitle">¿Qué hace especiales nuestras camisetas?</h3>
+            <ul>
+                <li><strong>Algodón orgánico:</strong> Utilizamos algodón cultivado sin pesticidas ni fertilizantes sintéticos.</li>
+                <li><strong>Tintes naturales:</strong> Todos nuestros productos son teñidos con colorantes naturales, sin químicos tóxicos.</li>
+                <li><strong>Embalaje reciclable:</strong> Nuestras camisetas vienen en embalaje 100% biodegradable y reciclable.</li>
+                <li><strong>Producción ética:</strong> Trabajamos con fábricas certificadas por cumplir con altos estándares laborales.</li>
+            </ul>
+
+            <h3 class="subtitle">Dirección</h3>
+            <p class="content-text">Nuestra tienda está ubicada en:</p>
+            <address class="address">
+                Calle Verde 123, <br>
+                28001, Las Palmas de Gran Canaria, España
+            </address>
+        </section>
+
+        <!-- Sección de Productos -->
+        <section id="productos" class="section">
+            <h2>Productos</h2>
+            <div class="product-container">
+                <!-- Tarjeta 1 -->
+                <div class="product-card">
+                    <img src="camisetas/camiseta1.jpg" alt="Camisa 1" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Producto 1</h2>
+                        <p class="product-description">Esta camiseta es ecológica, cómoda, original, sostenible, elegante, creativa, única, impactante y visualmente atractiva.</p>
+                        <p class="product-price">17.20€</p>
+                        <button class="add-to-cart" data-id="1" data-name="Camiseta 1" data-image="camisetas/camiseta1.jpg" data-price="17.20">Agregar al carrito</button>
+                    </div>
+                </div>
+        
+                <!-- Tarjeta 2 -->
+                <div class="product-card">
+                    <img src="camisetas/camiseta2.jpg" alt="Producto 2" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Producto 2</h2>
+                        <p class="product-description">Con un diseño atrevido, esta camiseta es sofisticada, impactante, polivalente, auténtica, juvenil, vanguardista, llena de vida, creativa, y excepcional.</p>
+                        <p class="product-price">19.20€</p>
+                        <button class="add-to-cart" data-id="2" data-name="Camiseta 2" data-image="camisetas/camiseta2.jpg" data-price="19.20">Agregar al carrito</button>
+                    </div>
+                </div>
+        
+                <!-- Tarjeta 3 -->
+                <div class="product-card">
+                    <img src="camisetas/camiseta3.jpg" alt="Producto 3" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Producto 3</h2>
+                        <p class="product-description">Diseñada para resaltar, esta camiseta es chic, llamativa, atractiva, dinámica, genuina, revitalizante, innovadora, animada, artística y distintiva</p>
+                        <p class="product-price">10.20€</p>
+                        <button class="add-to-cart" data-id="3" data-name="Camiseta 3" data-image="camisetas/camiseta3.jpg" data-price="10.20">Agregar al carrito</button>
+                    </div>
+                </div>
+        
+                <!-- Tarjeta 4 -->
+                <div class="product-card">
+                    <img src="camisetas/camiseta4.jpg" alt="Producto 4" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Producto 4</h2>
+                        <p class="product-description">Esta camiseta es de estilo actual, estilosa, deslumbrante, multifacética, sincera, rejuvenecedora, pionera, vibrante, expresiva y original.</p>
+                        <p class="product-price">11.20€</p>
+                        <button class="add-to-cart" data-id="4" data-name="Camiseta 4" data-image="camisetas/camiseta4.jpg" data-price="11.20">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="product-card">
+                    <img src="camisetas/camiseta5.jpg" alt="Producto 5" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Producto 5</h2>
+                        <p class="product-description">Esta camiseta es moderna, elegante, audaz, adaptable, genuina, refrescante, original, enérgica, artística y única.</p>
+                        <p class="product-price">11.20€</p>
+                        <button class="add-to-cart" data-id="5" data-name="Camiseta 5" data-image="camisetas/camiseta5.jpg" data-price="11.20">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6 -->
+                <div class="product-card">
+                    <img src="camisetas/camiseta6.jpg" alt="Producto 6" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Producto 6</h2>
+                        <p class="product-description">Esta camiseta es contemporánea, sofisticada, impactante, flexible, auténtica, revitalizante, creativa, dinámica, artística y exclusiva.</p>
+                        <p class="product-price">15.99€</p>
+                        <button class="add-to-cart" data-id="6" data-name="Camiseta 6" data-image="camisetas/camiseta6.jpg" data-price="15.99">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section clearfix">
+            <div class="form-container">
+                <h2>Contacto</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailContact">Correo electrónico:</label>
+                        <input type="email" id="emailContact" name="emailContact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7039.2115079763025!2d-15.442067225448719!3d28.097566208174452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095b954df2b5f%3A0x2bec717ab8988008!2sIES%20Ana%20Luisa%20Ben%C3%ADtez!5e0!3m2!1ses!2ses!4v1726578862687!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" style="display: none;">
+        <div>
+            <h2>Carrito de Compras</h2>
+            <div id="cartItems"></div>
+            <button onclick="closeCart()">Cerrar</button>
+            <button onclick="clearCart()">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        © 2024 Las Camisetas Sostenibles - Todos los derechos reservados
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js_clase/cart.js"></script>
+    <script src="js_clase/formulario.js"></script>
+</body>
+</html>

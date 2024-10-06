@@ -1,0 +1,104 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Sección de productos */
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Para contener los floats */
+}
+
+#productos h2 {
+    font-size: 2em; /* Cambia el tamaño a tu preferencia */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+}
+
+
+.product-card {
+    width: 25%;
+    float: left;
+    margin: 1.66%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-height: 600px; /* Ajusta esta altura según el contenido */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    padding: 10px 0;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.product-price {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Aseguramos que las tarjetas flotantes no se salgan de la caja */
+.product-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Limpiar los floats después de cada tercera tarjeta */
+.product-card:nth-child(3n+1) {
+    clear: left;
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

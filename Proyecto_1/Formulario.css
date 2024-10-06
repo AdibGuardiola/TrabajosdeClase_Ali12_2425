@@ -1,0 +1,68 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.section, .form-container, .map-container {
+    box-sizing: border-box; /* Asegura que el padding y border sean incluidos en el ancho */
+}
+
+
+/* General Styles */
+.form-container {
+    vertical-align: top;   
+    float: left; /* Flota a la izquierda */
+    width: 45%; /* Ancho ajustado para el margen */
+    margin-left: 5%; /* Margen entre el formulario y el mapa */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    min-height: 400px; /* Establecer altura mínima */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Mejora el estilo de los elementos del formulario */
+input[type="text"], input[type="email"], textarea, button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: auto; /* Permite ajustes de ancho personalizados */
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+    vertical-align: top;   
+    float: left; /* Flota a la derecha */
+    width: 45%; /* Incrementar el ancho del mapa */
+    height: 450px; /* Altura específica para el mapa */
+}
+
+/* Clearfix para resolver problemas de flotación */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
