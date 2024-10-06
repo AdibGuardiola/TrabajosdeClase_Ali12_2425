@@ -2,7 +2,7 @@
 
 Esta es una aplicación del tiempo que permite a los usuarios consultar el pronóstico del clima en tiempo real para cualquier ciudad del mundo. La aplicación utiliza la API de OpenWeather para obtener datos como la temperatura, la humedad y la velocidad del viento. Además, cambia los íconos dependiendo de las condiciones climáticas.
 
-![App del Tiempo](https://icon-icons.com/es/icono/lluvia-lluvia-llovizna-sol-nube-clima-pron%C3%B3stico/84357)
+
 
 ## Características
 
