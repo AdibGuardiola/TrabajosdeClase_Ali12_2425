@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App del Tiempo Simplificada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main-container {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            position: relative;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front, .back {
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .search {
+            margin-bottom: 10px;
+        }
+
+        .search input {
+            padding: 8px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+
+        .search button {
+            padding: 8px;
+            width: 90%;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .city {
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+        }
+
+        .temp {
+            margin: 5px 0;
+            font-size: 2rem;
+        }
+
+        .details {
+            margin-top: 5px;
+        }
+
+        .details p {
+            margin: 2px 0;
+        }
+
+        .flip-btn {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 8px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        /* Estilo para la imagen del clima */
+        .weather-icon {
+            width: 80px;
+            height: 80px;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Contenedor principal centrado con la tarjeta -->
+    <div class="main-container">
+        <div class="card" id="weather-card">
+            <!-- Parte frontal de la tarjeta -->
+            <div class="side front">
+                <div class="search">
+                    <input type="text" id="city-input" placeholder="Ingrese ciudad" spellcheck="false">
+                    <button id="search-btn">Buscar</button>
+                </div>
+                <h2 class="city">Ciudad</h2>
+
+                <!-- Imagen del clima -->
+                <img src="images/weather-news.png" class="weather-icon" alt="weather icon">
+
+                <h1 class="temp">0°C</h1>
+                <div class="details">
+                    <p>Humedad: <span class="humidity">0%</span></p>
+                    <p>Velocidad del viento: <span class="wind">0 km/h</span></p>
+                </div>
+                <button class="flip-btn" id="flip-btn">Mostrar más</button>
+            </div>
+
+            <!-- Parte trasera de la tarjeta -->
+            <div class="side back">
+                <h2>Más Información</h2>
+                <div class="extra-details">
+                    <p>Amanecer: <span class="sunrise">N/A</span></p>
+                    <p>Puesta del sol: <span class="sunset">N/A</span></p>
+                    <p>Presión atmosférica: <span class="pressure">N/A</span></p>
+                </div>
+                <button class="flip-btn" id="flip-back-btn">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = 'a7a6acf4bb38c97fe6bfa1a3c782bd77';
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const pathImages = "images/";
+
+        const searchBox = document.querySelector("#city-input");
+        const searchBtn = document.querySelector("#search-btn");
+        const flipBtn = document.querySelector("#flip-btn");
+        const flipBackBtn = document.querySelector("#flip-back-btn");
+        const card = document.querySelector("#weather-card");
+        const weatherIcon = document.querySelector(".weather-icon");
+
+        async function checkWeather(city) {
+            try {
+                const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+                if (!response.ok) {
+                    throw new Error("Ciudad no encontrada");
+                }
+                const data = await response.json();
+                document.querySelector(".city").innerHTML = data.name;
+                document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+                document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+                document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+                // Datos adicionales para la parte trasera
+                const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+                const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+                document.querySelector(".sunrise").innerHTML = sunrise;
+                document.querySelector(".sunset").innerHTML = sunset;
+                document.querySelector(".pressure").innerHTML = data.main.pressure + " hPa";
+
+                // Cambiar la imagen según el clima
+                if (data.weather[0].main == "Clouds") {
+                    weatherIcon.src = pathImages + "nubes.png";
+                } else if (data.weather[0].main == "Clear") {
+                    weatherIcon.src = pathImages + "sol.png";
+                } else if (data.weather[0].main == "Rain") {
+                    weatherIcon.src = pathImages + "lluvia.png";
+                } else if (data.weather[0].main == "Drizzle") {
+                    weatherIcon.src = pathImages + "llovizna.png";
+                } else {
+                    weatherIcon.src = pathImages + "default.png"; // Imagen por defecto
+                }
+
+            } catch (error) {
+                alert("Ciudad no encontrada, por favor intente de nuevo.");
+            }
+        }
+
+        searchBtn.addEventListener("click", () => {
+            if (!searchBox.value) {
+                return alert("Por favor, ingrese una ciudad");
+            }
+            checkWeather(searchBox.value);
+        });
+
+        flipBtn.addEventListener("click", () => {
+            card.classList.add("flipped");
+        });
+
+        flipBackBtn.addEventListener("click", () => {
+            card.classList.remove("flipped");
+        });
+    </script>
+
+</body>
+
+</html>
+
