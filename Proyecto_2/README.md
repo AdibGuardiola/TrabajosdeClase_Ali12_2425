@@ -4,6 +4,7 @@ Esta es una aplicación del tiempo que permite a los usuarios consultar el pron�
 
 
 
+
 ## Características
 
 - Búsqueda de clima en tiempo real por ciudad.
