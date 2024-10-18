@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Cuatro columnas de igual tamaño */
+  grid-template-rows: 100px 200px 200px 100px; /* Definir las alturas de las filas */
+  gap: 30px;
+  grid-template-areas:
+    "header header header header"
+    "a1 a2 a3 a4"  
+    "a5 a6 a7 a8"
+    "footer footer footer footer";
+  height: 200vh;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #f39c12;
+  grid-area: header;
+}
+
+.a1 {
+  grid-area: a1;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 5px solid #2980b9;
+}
+
+.a2 {
+  grid-area: a2;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+
+.a3 {
+  grid-area: a3;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+
+
+.a4 {
+  grid-area: a4;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+.a5 {
+  grid-area: a5;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+
+.a6 {
+  grid-area: a6;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+
+.a7{
+  grid-area: a7;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+
+
+.a8 {
+  grid-area: a8;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #3498db;
+  border: 1px solid #2980b9;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #f39c12;
+  grid-area: footer;
+}

@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Cuatro columnas de igual tamaño */
+  grid-template-rows: 100px 200px 200px 100px; /* Definir las alturas de las filas */
+  gap: 30px;
+  grid-template-areas:
+    "header header header header"
+    "a1 a2 a3 a4"  
+    "a5 a6 a7 a8"
+    "footer footer footer footer";
+  height: 200vh;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #f39c12;
+  grid-area: header;
+}
+
+.a1 {
+  grid-area: a1;
+  background-color: #3498db;
+  display: flex;
+  flex-direction: column; /* Permite que el contenido y el botón estén uno debajo del otro */
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 5px solid #2980b9;
+  position: relative; /* Necesario para el posicionamiento de las imágenes */
+  overflow: hidden; /* Para que las imágenes no se desborden */
+}
+
+.a2, .a3, .a4, .a5, .a6, .a7, .a8 {
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border: 1px solid #2980b9;
+}
+
+/* Estilo del botón */
+.btn-a1 {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn-a1:hover {
+  background-color: #e67e22;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #f39c12;
+  grid-area: footer;
+}
+
+/* Animación de imágenes */
+@keyframes drop {
+  0% {
+    top: -50px; /* Comienza fuera de la caja */
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%; /* Se mueve hacia abajo fuera de la caja */
+    opacity: 0;
+  }
+}
+
+/* Sin animación inicial */
+.png-image {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -50px; /* Comienza fuera de la caja */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuatro Cajas Grid</title>
+     <style>
+     </style>
+     <link rel="stylesheet" href="Grid_3.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header">Encabezado</div>
+      <div class="a1" id="a1">
+        #1
+        <!-- Botón añadido en la caja 1 -->
+        <button class="btn-a1" onclick="triggerImageEffect('a1', './palomitas.png')">Haz clic aquí</button>
+      </div>
+      <div class="a2">#2</div>
+      <div class="a3">#3</div>
+      <div class="a4">#4</div>
+      <div class="a5">#5</div>
+      <div class="a6">#6</div>
+      <div class="a7">#7</div>
+      <div class="a8">#8</div>
+      <div class="footer">Pie de página</div>
+    </div>
+
+    <!-- JavaScript para mostrar hamburguesas y animarlas solo al hacer clic -->
+    <script>
+        function triggerImageEffect(cardId, imageUrl) {
+          const card = document.getElementById(cardId);
+  
+          // Crear múltiples imágenes con animación
+          for (let i = 0; i < 10; i++) {
+            const image = document.createElement("img");
+            image.src = imageUrl; // URL de la imagen en la misma carpeta
+            image.className = "png-image";
+            image.style.left = Math.random() * 90 + "%"; // Posición aleatoria en el eje X
+            image.style.animation = `drop 2s linear`; // Aplicar animación después de crearse
+            image.style.animationDelay = `${Math.random() * 2}s`; // Retraso aleatorio en la caída
+            card.appendChild(image);
+          }
+  
+          // Eliminar imágenes después de 5 segundos
+          setTimeout(() => {
+            const images = card.querySelectorAll('.png-image');
+            images.forEach(image => image.remove());
+          }, 5000);
+        }
+      </script>
+  </body>
+</html>
+
