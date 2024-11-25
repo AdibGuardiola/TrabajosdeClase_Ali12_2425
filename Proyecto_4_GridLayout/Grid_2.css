@@ -10,8 +10,8 @@ body {
   gap: 30px;
   grid-template-areas:
     "header header header header"
-    "a1 a2 a3 a4"  
-    "a5 a6 a7 a8"
+    "a1 a1 a3 a4"  
+    "a1 a1 a7 a4"
     "footer footer footer footer";
   height: 200vh;
   width: 90%;
